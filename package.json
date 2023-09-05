@@ -1,0 +1,23 @@
+{
+  "name": "cypress-kpk-maciek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmgawlowski/cypress-kpk-maciek.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmgawlowski/cypress-kpk-maciek/issues"
+  },
+  "homepage": "https://github.com/mmgawlowski/cypress-kpk-maciek#readme",
+  "devDependencies": {
+    "cypress": "^13.1.0",
+    "@faker-js/faker":"^8.0.2"
+  }
+}
