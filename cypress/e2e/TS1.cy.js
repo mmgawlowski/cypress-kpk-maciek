@@ -7,6 +7,8 @@ import BasicAuthPage from "../page-objects/basicAuthPage"
 import FormPage from "../page-objects/formPage"
 import KeyPressesPage from "../page-objects/keyPressesPage"
 import DatePickerPage from "../page-objects/datePickerPage"
+import DragAndDropPage from "../page-objects/dragAndDropPage"
+import AddRemoveElementsPage from "../page-objects/addRemoveElementsPage"
 
 const homePage = new HomePage()
 
@@ -16,7 +18,6 @@ describe('my first scenario', () => {
     })
     
     it('test inputs', function() {
-        // const homePage = new HomePage();
         homePage.clickInputTab()
 
         const inputPage = new InputPage()
@@ -82,5 +83,23 @@ describe('my first scenario', () => {
         datePickerPage.setValidDate()
         datePickerPage.tryToSetDateUnderMin()
         datePickerPage.tryToSetDateAboveMax()
+    })
+
+    it('test drag and drop', function() {
+        homePage.clickDragAndDropTag()
+
+        const dragAndDropPage = new DragAndDropPage();
+        dragAndDropPage.dragAndDropColumnAToBUsingDragEvents()
+        dragAndDropPage.dragAndDropColumnAToBUsingPlugin()
+    })
+
+    it.only('test add/remove elements', function() {
+        homePage.clickAddRemoveElementsTab()
+
+        const addRemoveElementsPage = new AddRemoveElementsPage();
+        addRemoveElementsPage.addElement(1)
+        addRemoveElementsPage.removeElement(0)
+        addRemoveElementsPage.addElement(3)
+        addRemoveElementsPage.removeElement(1)
     })
 })

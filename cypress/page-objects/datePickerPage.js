@@ -9,12 +9,12 @@ class DatePickerPage {
         cy.get(datePicker).type(date).should('have.value', date)
         if (dateToSet > maxDate) {
             cy.get(datePicker).invoke('prop', 'validity').its('rangeOverflow').should('be.true')
-            cy.get(datePicker).then($datePicker => expect($datePicker[0].validationMessage).to.be.equal('Value must be 31/12/2020 or earlier.'))
+            cy.get(datePicker).should($datePicker => expect($datePicker[0].validationMessage).to.be.equal('Value must be 31/12/2020 or earlier.'))
         } else if (dateToSet < minDate) {
             cy.get(datePicker).invoke('prop', 'validity').its('rangeUnderflow').should('be.true')
-            cy.get(datePicker).then($datePicker => expect($datePicker[0].validationMessage).to.be.equal('Value must be 01/01/2020 or later.'))
+            cy.get(datePicker).should($datePicker => expect($datePicker[0].validationMessage).to.be.equal('Value must be 01/01/2020 or later.'))
         } else {
-            cy.get(datePicker).then($datePicker => expect($datePicker[0].checkValidity(), 'valid value').to.be.true)
+            cy.get(datePicker).should($datePicker => expect($datePicker[0].checkValidity(), 'valid value').to.be.true)
         }  
     }
 

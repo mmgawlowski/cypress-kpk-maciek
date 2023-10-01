@@ -25,9 +25,9 @@ class FormPage {
         cy.get(lname).clear().type('G.').then(() => {
             cy.once('window:alert', stub)
         })
-        cy.get(form).then($form => expect($form[0].checkValidity()).to.be.false)
-        cy.get(fname).then($fname => expect($fname[0].validationMessage).to.be.equal('Please fill out this field.'))
-        cy.get(submitButton).click().then(() => expect(stub).to.be.not.called)
+        cy.get(form).should($form => expect($form[0].checkValidity()).to.be.false)
+        cy.get(fname).should($fname => expect($fname[0].validationMessage).to.be.equal('Please fill out this field.'))
+        cy.get(submitButton).click().should(() => expect(stub).to.be.not.called)
     }
 }
 export default FormPage;
