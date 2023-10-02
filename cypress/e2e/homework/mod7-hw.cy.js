@@ -1,14 +1,16 @@
-import InputPage from "../page-objects/inputPage"
-import HomePage from "../page-objects/homePage"
-import CheckboxPage from "../page-objects/checkboxPage"
-import DropDownListPage from "../page-objects/dropdownListPage"
-import HoversPage from "../page-objects/hoversPage"
-import BasicAuthPage from "../page-objects/basicAuthPage"
-import FormPage from "../page-objects/formPage"
-import KeyPressesPage from "../page-objects/keyPressesPage"
-import DatePickerPage from "../page-objects/datePickerPage"
-import DragAndDropPage from "../page-objects/dragAndDropPage"
-import AddRemoveElementsPage from "../page-objects/addRemoveElementsPage"
+import InputPage from "../../page-objects/inputPage"
+import HomePage from "../../page-objects/homePage"
+import CheckboxPage from "../../page-objects/checkboxPage"
+import DropDownListPage from "../../page-objects/dropdownListPage"
+import HoversPage from "../../page-objects/hoversPage"
+import BasicAuthPage from "../../page-objects/basicAuthPage"
+import FormPage from "../../page-objects/formPage"
+import KeyPressesPage from "../../page-objects/keyPressesPage"
+import DatePickerPage from "../../page-objects/datePickerPage"
+import DragAndDropPage from "../../page-objects/dragAndDropPage"
+import AddRemoveElementsPage from "../../page-objects/addRemoveElementsPage"
+import StatusCodesPage from "../../page-objects/statusCodesPage"
+import IframePage from "../../page-objects/iFramePage"
 
 const homePage = new HomePage()
 
@@ -93,7 +95,7 @@ describe('my first scenario', () => {
         dragAndDropPage.dragAndDropColumnAToBUsingPlugin()
     })
 
-    it.only('test add/remove elements', function() {
+    it('test add/remove elements', function() {
         homePage.clickAddRemoveElementsTab()
 
         const addRemoveElementsPage = new AddRemoveElementsPage();
@@ -101,5 +103,23 @@ describe('my first scenario', () => {
         addRemoveElementsPage.removeElement(0)
         addRemoveElementsPage.addElement(3)
         addRemoveElementsPage.removeElement(1)
+    })
+
+    it('test status codes', function() {
+        homePage.clickStatusCodesTab()
+        
+        const statusCodesPage = new StatusCodesPage();
+        statusCodesPage.check200()
+        statusCodesPage.check305()
+        statusCodesPage.check404()
+        statusCodesPage.check500()
+    })
+
+    it('test iframe', function() {
+        homePage.clickIframeTab()
+
+        const iframePage = new IframePage()
+        iframePage.clickButton1()
+        iframePage.clickButton2UsingPlugin()
     })
 })
