@@ -12,58 +12,58 @@ import AddRemoveElementsPage from "../../page-objects/addRemoveElementsPage"
 import StatusCodesPage from "../../page-objects/statusCodesPage"
 import IframePage from "../../page-objects/iFramePage"
 
-const homePage = new HomePage()
 
 describe('my first scenario', () => {
+    const homePage = new HomePage();
+    const inputPage = new InputPage();
+    const checkboxPage = new CheckboxPage();
+    const dropdownPage = new DropDownListPage();
+    const hoversPage = new HoversPage();
+    const basicAuthPage = new BasicAuthPage();
+    const formPage = new FormPage();
+    const keyPressesPage = new KeyPressesPage();
+    const datePickerPage = new DatePickerPage();
+    const dragAndDropPage = new DragAndDropPage();
+    const addRemoveElementsPage = new AddRemoveElementsPage();
+    const statusCodesPage = new StatusCodesPage();
+    const iframePage = new IframePage();
+    
     beforeEach(() => {
         homePage.visitPage()
     })
     
     it('test inputs', function() {
         homePage.clickInputTab()
-
-        const inputPage = new InputPage()
         inputPage.typeNumberIntoField()
         inputPage.typeLettersIntoField()
 
     })
 
     it('test checkbox', function() {
-        homePage.clickCheckboxTab()
-
-        const checkboxPage = new CheckboxPage();
+        homePage.clickCheckboxTab()  
         checkboxPage.checkFirstCheckbox()
         checkboxPage.uncheckLastCheckbox()
     })
 
     it('test dropdown list', function() {
         homePage.clickDropdownListTab()
-
-        const dropdownPage = new DropDownListPage();
         dropdownPage.chooseDropdownListFirstOption()
     })
 
     it('test hover', function() {
         homePage.clickHoversTab()
-
-        const hoversPage = new HoversPage();
         hoversPage.hoverOverElement()
     })
 
     it('test basic auth', function() {
         homePage.clickBasicAuthTab()
-
-        const basicAuthPage = new BasicAuthPage;
         basicAuthPage.loginWithValidCredentials()
         homePage.clickBasicAuthTab()
         basicAuthPage.loginWithInvalidCredentials()
-
     })
 
     it('test form', function() {
         homePage.clickFormTab()
-
-        const formPage = new FormPage;
         formPage.submitFormWithValidData()
         formPage.submitFormWithValidDataByPressingEnter()
         formPage.tryToSubmitFormWithInvalidData()
@@ -71,34 +71,25 @@ describe('my first scenario', () => {
 
     it('test key presses', function() {
         homePage.clickKeyPressesTab()
-
-
-        const keyPressesPage = new KeyPressesPage();
         keyPressesPage.clickKeyboardKeyAndCheckResult('{enter}', 'ENTER')
         keyPressesPage.clickKeyboardKeyAndCheckResult('r', 'R')
     })
 
     it('test data picker', function() {
         homePage.clickDatePickerTab()
-
-        const datePickerPage = new DatePickerPage();
         datePickerPage.setValidDate()
         datePickerPage.tryToSetDateUnderMin()
         datePickerPage.tryToSetDateAboveMax()
     })
 
     it('test drag and drop', function() {
-        homePage.clickDragAndDropTag()
-
-        const dragAndDropPage = new DragAndDropPage();
+        homePage.clickDragAndDropTag() 
         dragAndDropPage.dragAndDropColumnAToBUsingDragEvents()
         dragAndDropPage.dragAndDropColumnAToBUsingPlugin()
     })
 
     it('test add/remove elements', function() {
         homePage.clickAddRemoveElementsTab()
-
-        const addRemoveElementsPage = new AddRemoveElementsPage();
         addRemoveElementsPage.addElement(1)
         addRemoveElementsPage.removeElement(0)
         addRemoveElementsPage.addElement(3)
@@ -106,9 +97,7 @@ describe('my first scenario', () => {
     })
 
     it('test status codes', function() {
-        homePage.clickStatusCodesTab()
-        
-        const statusCodesPage = new StatusCodesPage();
+        homePage.clickStatusCodesTab() 
         statusCodesPage.check200()
         statusCodesPage.check305()
         statusCodesPage.check404()
@@ -116,9 +105,7 @@ describe('my first scenario', () => {
     })
 
     it('test iframe', function() {
-        homePage.clickIframeTab()
-
-        const iframePage = new IframePage()
+        homePage.clickIframeTab()  
         iframePage.clickButton1()
         iframePage.clickButton2UsingPlugin()
     })
