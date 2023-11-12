@@ -11,6 +11,8 @@
       "@typescript-eslint",
       "cypress"
   ],
-  "rules": {},
+  "rules": {
+    "cypress/unsafe-to-chain-command": "warn"
+  },
   "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
 }

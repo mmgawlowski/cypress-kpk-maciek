@@ -23,7 +23,7 @@ class DragAndDropPage {
         let dragElementText: string;
         
         cy.get(dragSelector).then($dragElement => dragElementText = $dragElement.text());
-        // @ts-expect-error
+        // @ts-expect-error Incorrect return value for drag() method in the plugin.
         cy.get(dragSelector).drag(dropSelector).then((complete: boolean) => expect(complete).to.be.true);
         cy.get(dropSelector).should('not.have.class', 'over');
         cy.get(dropSelector).should($dropElement => expect($dropElement.text()).to.be.equal(dragElementText));
