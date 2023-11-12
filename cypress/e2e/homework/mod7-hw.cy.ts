@@ -10,7 +10,7 @@ import DatePickerPage from "../../page-objects/datePickerPage"
 import DragAndDropPage from "../../page-objects/dragAndDropPage"
 import AddRemoveElementsPage from "../../page-objects/addRemoveElementsPage"
 import StatusCodesPage from "../../page-objects/statusCodesPage"
-import IframePage from "../../page-objects/iFramePage"
+import IframePage from "../../page-objects/iframePage"
 
 
 describe('my first scenario', () => {

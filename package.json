@@ -2,15 +2,15 @@
   "name": "cypress-kpk-maciek",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "cypress run --spec cypress/e2e/TS1.cy.js"
+    "test": "cypress run --spec cypress/e2e/mod7-hw.cy.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmgawlowski/cypress-kpk-maciek.git"
   },
-  "author": "",
+  "author": "MG",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmgawlowski/cypress-kpk-maciek/issues"
@@ -19,7 +19,13 @@
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.5",
     "@faker-js/faker": "^8.0.2",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "cypress": "^13.1.0",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "eslint": "^8.53.0",
+    "eslint-plugin-cypress": "^2.15.1",
+    "typescript": "^5.2.2"
   }
 }

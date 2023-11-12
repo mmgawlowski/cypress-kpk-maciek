@@ -1,8 +1,0 @@
-const dropdownList = 'select'
-
-class DropDownListPage {
-    chooseDropdownListFirstOption() {
-        cy.get(dropdownList).select('Option 1').should('have.value', '1')
-    }
-}
-export default DropDownListPage
