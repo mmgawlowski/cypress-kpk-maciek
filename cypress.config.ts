@@ -1,6 +1,17 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    "reportDir": "cypress/reports/mochawesome",
+    "reportTitle": "Cypress Report",
+    "charts": true,
+    "overwrite": true,
+    "saveJson": false,
+    "enableCode": true
+  },
+  screenshotsFolder: 'cypress/reports/mochawesome/screenshots',
+  videosFolder: 'cypress/reports/mochawesome/videos',
   viewportHeight: 1080,
   viewportWidth: 1920,
   watchForFileChanges: false,
@@ -20,7 +31,8 @@ export default defineConfig({
           launchOptions.args.push('--height=1080');
         }
         return launchOptions;
-      })
+      });
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
     baseUrl: 'https://simpletestsite.fabrykatestow.pl/'
   },

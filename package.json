@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "cypress run --spec cypress/e2e/mod7-hw.cy.ts"
+    "test": "cypress run --spec cypress/e2e/tests/homework/mod7-hw.cy.ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "@typescript-eslint/parser": "^6.10.0",
     "cypress": "^13.1.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.6.1",
     "eslint": "^8.53.0",
     "eslint-plugin-cypress": "^2.15.1",
     "typescript": "^5.2.2"

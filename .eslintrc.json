@@ -14,5 +14,5 @@
   "rules": {
     "cypress/unsafe-to-chain-command": "warn"
   },
-  "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]
+  "ignorePatterns": ["cypress/reports/*"]
 }
