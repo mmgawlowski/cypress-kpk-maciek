@@ -13,5 +13,5 @@
       "importHelpers": true,
       "allowJs": true
     },
-    "include": ["**/*.ts", "support/custom-commands.d.ts"]
+    "include": ["**/*.ts", "cypress/support/custom-commands.d.ts"]
   }
