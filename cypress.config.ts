@@ -16,6 +16,7 @@ export default defineConfig({
   viewportWidth: 1920,
   watchForFileChanges: false,
   e2e: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setupNodeEvents(on, config) {
       // implement node event listeners here
       on('before:browser:launch', (browser, launchOptions) => {
@@ -32,6 +33,7 @@ export default defineConfig({
         }
         return launchOptions;
       });
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
       require('cypress-mochawesome-reporter/plugin')(on);
     },
     baseUrl: 'https://simpletestsite.fabrykatestow.pl/'
