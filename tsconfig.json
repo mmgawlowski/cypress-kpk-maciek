@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "build",
+      "module": "ES2020",
+      "moduleResolution": "Node",
+      "resolveJsonModule": true,
+      "sourceMap": false,
+      "strict": true,
+      "target": "ES2021",
+      "lib": ["ES2021", "dom"],
+      "types": ["cypress", "node", "@4tw/cypress-drag-drop", "cypress-mochawesome-reporter"],
+      "importHelpers": true,
+      "allowJs": true
+    },
+    "include": ["**/*.ts", "support/custom-commands.d.ts"]
+  }
